@@ -8,34 +8,55 @@
         <link rel="canonical" href="https://mojtabaahn.github.io/docs">
         <meta name="description" content="Api Docs">
         <title>Api Docs</title>
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=bc00dba26824d76f08c2">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=4520f805e8c28ccebe69">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
     </head>
-    <body class="text-gray-900 font-sans antialiased">
-            <div class="max-w-2xl mx-auto pt-16 min-h-screen border-l border-r border-gray-200 px-8">
-        <h2 class="text-6xl font-light mb-8">
+    <body class="text-gray-900 antialiased" style="background-color: #fcfcfc;font-family: 'Roboto Slab', serif;">
+            <div class="border-b border-light-8">
+        <div class="h-16 w-full px-6 max-w-2xl mx-auto flex items-center px-4">
+            <a href="/" class="items-center flex p-2 hover:text-blue-600">
+                <i class="bx bx-left-arrow-alt text-xl mr-2 relative top-px"></i>
+                <div>Go Back</div>
+            </a>
+        </div>
+    </div>
+    <div class="w-full px-6 max-w-2xl mx-auto">
+        <h2 class="text-6xl font-light my-8">
             <div class="inline-block relative cursor-default" x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false">
                 <div class="px-3 relative z-10">Api Docs</div>
                 <div class="absolute left-0 bottom-0 h-4 bg-red-500 bg-opacity-50 w-full transform transition duration-100" x-bind:class="{'translate-y-1' : !hovered}"></div>
             </div>
         </h2>
-        <div class="grid grid-cols-1 px-4 gap-10 py-10">
-                            <div class="block text-3xl font-light relative">
-                    <a
-                            x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
-                            class="relative inline-block px-2" href="https://mojtabaahn.github.io/docs/delivery"
-                    >
+        <div class="grid grid-cols-1 gap-10 py-10">
+                            <div
+                        class="block text-3xl font-light relative border border-gray-300 p-6 bg-white duration-300"
+                        x-bind:class="{'border-yellow-500' : hovered}"
+                        x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
+                >
+                    <a href="https://mojtabaahn.github.io/docs/delivery" class="relative inline-block px-2">
                         <span class="absolute left-0 top-1/2 h-12 w-12 bg-yellow-500 transform -translate-y-1/2 bg-opacity-25 transition-all duration-300" x-bind:class="{'w-full bg-opacity-100' : hovered,'-translate-x-2' : !hovered}"></span>
                         <span class="relative transition-all duration-300">Noonba Delivery</span>
                     </a>
+                    <div class="text-base text-gray-600 mt-4 font-normal">Date Modified: 58 seconds ago</div>
+                    <div class="text-base text-gray-600 mt-4 font-normal">OpenApi/Swagger File:
+                        <a href="https://mojtabaahn.github.io/assets/docs/delivery.yaml" class="text-blue-500 hover:text-blue-600">delivery.yaml</a>
+                    </div>
                 </div>
-                            <div class="block text-3xl font-light relative">
-                    <a
-                            x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
-                            class="relative inline-block px-2" href="https://mojtabaahn.github.io/docs/freelancer"
-                    >
+                            <div
+                        class="block text-3xl font-light relative border border-gray-300 p-6 bg-white duration-300"
+                        x-bind:class="{'border-green-500' : hovered}"
+                        x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
+                >
+                    <a href="https://mojtabaahn.github.io/docs/freelancer" class="relative inline-block px-2">
                         <span class="absolute left-0 top-1/2 h-12 w-12 bg-green-500 transform -translate-y-1/2 bg-opacity-25 transition-all duration-300" x-bind:class="{'w-full bg-opacity-100' : hovered,'-translate-x-2' : !hovered}"></span>
                         <span class="relative transition-all duration-300">Freelancer Project</span>
                     </a>
+                    <div class="text-base text-gray-600 mt-4 font-normal">Date Modified: 58 seconds ago</div>
+                    <div class="text-base text-gray-600 mt-4 font-normal">OpenApi/Swagger File:
+                        <a href="https://mojtabaahn.github.io/assets/docs/freelancer.json" class="text-blue-500 hover:text-blue-600">freelancer.json</a>
+                    </div>
                 </div>
                     </div>
     </div>
