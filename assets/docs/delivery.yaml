@@ -1,0 +1,322 @@
+openapi: 3.0.0
+components:
+  examples:
+    login:
+      value:
+        access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9kZWxpdmVyeS50ZXN0XC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjA0OTk5NzczLCJleHAiOjE2MDUwMDMzNzMsIm5iZiI6MTYwNDk5OTc3MywianRpIjoiaE5MWEFNRm04SERaVHVtRCIsInN1YiI6MzUsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yrz8JMLxxdMExb3aENGLL5B02ZPo1n1tLZ31736t9eQ
+        token_type: bearer
+        expires_in: 3600
+  schemas:
+    login:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        expires_in:
+          type: integer
+          description: Token expiration time in seconds
+  parameters:
+    dateParam:
+      in: query
+      name: date
+      required: true
+      schema:
+        type: string
+        example: "1399-08-20"
+      description: Jalali Date
+    id:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: integer
+        example: 5525
+      description: Unique identifier for resource
+info:
+  title: NoonbaShop Dashboard
+  #  description: 'Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.'
+  version: 1.0.1
+  x-logo:
+    url: https://mojtabaahn.ir/docs/sources/delivery.png
+servers:
+  - url: 'https://dashboard.noonbashop.com/api/v1'
+tags:
+  - name: Authentication
+  - name: Profile
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: 'Login and get JWT token'
+      operationId: Login
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/login'
+              examples:
+                example:
+                  $ref: '#/components/examples/login'
+      description: Login and get JWT authentication token
+      requestBody:
+        content:
+          application-json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+              required:
+                - email
+                - password
+            examples:
+              example:
+                value:
+                  email: admin@admin.com
+                  password: password
+        description: ''
+    parameters: []
+
+  /auth/refresh:
+    post:
+      tags:
+        - Authentication
+      summary: ''
+      operationId: Refresh Authentication Data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/login'
+              examples:
+                example:
+                  $ref: '#/components/examples/login'
+      description: ''
+      requestBody:
+        content:
+          application-json:
+            schema:
+              type: object
+              properties: {}
+  /auth/logout:
+    post:
+      tags:
+        - Authentication
+      summary: ''
+      operationId: Log Out
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  message:
+                    type: string
+                    minLength: 1
+              examples:
+                example:
+                  value:
+                    message: Successfully logged out
+  /profile:
+    get:
+      tags:
+        - Profile
+      summary: Get Courier Info
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      operationId: Get Courier Info
+  /profile/update-password:
+    post:
+      summary: Your GET endpoint
+      tags:
+        - Profile
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              examples:
+                example-1:
+                  value:
+                    message: Password Updated
+      operationId: get-profile-update-password
+      description: Update Courier Password
+      requestBody:
+        content:
+          application-json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                password:
+                  type: string
+                password_confirmation:
+                  type: string
+
+  /profile/update-geo-location:
+    post:
+      tags:
+        - Profile
+      description: Update Geo Location
+      operationId: post-profile-update-geo-location
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application-json:
+            schema:
+              type: object
+              properties:
+                longitude:
+                  type: number
+                latitude:
+                  type: number
+
+  /return-product/request:
+    post:
+      tags:
+        - Return Product
+      summary: Request ReturnProduct
+      description: Request a ReturnProduct for a customer
+      requestBody:
+        content:
+          application-json:
+            schema:
+              type: object
+              properties:
+                customer_id:
+                  type: integer
+                  description: Customer Unique Identifier
+                weight:
+                  type: number
+                  description: Total weight of returned product in Grams
+      responses:
+        200:
+          description: OK
+
+
+  /return-product/{id}:
+    get:
+      tags:
+        - Return Product
+      summary: Show ReturnProduct
+      description: Get returned product Details
+      parameters:
+        - schema:
+            type: integer
+          name: id
+          in: path
+          description: ReturnProduct Unique Identifier
+          required: true
+      responses:
+        200:
+          description: OK
+
+
+  /return-product:
+    get:
+      tags:
+        - Return Product
+      description: Get list of all returned product request submitted by courier
+      summary: ReturnProduct Index
+      responses:
+        200:
+          description: OK
+
+
+  /order/urgent:
+    get:
+      tags:
+        - Orders
+      description: Get list of urgent orders assigned to courier
+      summary: Urgent Order Index
+      parameters:
+        - $ref: '#/components/parameters/dateParam'
+      responses:
+        200:
+          description: OK
+
+  /order/scheduled:
+    get:
+      tags:
+        - Orders
+      description: Get list of scheduled orders assigned to courier
+      summary: Scheduled Order Index
+      parameters:
+        - $ref: '#/components/parameters/dateParam'
+        - schema:
+            type: string
+            enum:
+              - morning
+              - noon
+              - evening
+          name: shift
+          in: query
+          description: Shift of order delivery
+          required: true
+      responses:
+        200:
+          description: OK
+
+
+  /order/{id}:
+    get:
+      tags:
+        - Orders
+      description: Get order details by its unique identifier
+      summary: Get order details
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        200:
+          description: OK
+
+
+  /order/{id}/update-status:
+    post:
+      tags:
+        - Orders
+      description: Update order status
+      summary: Update order status
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        content:
+          application-json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: New status for order
+      responses:
+        200:
+          description: OK
+
