@@ -39,7 +39,7 @@ info:
   #  description: 'Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.'
   version: 1.0.1
   x-logo:
-    url: https://mojtabaahn.ir/docs/sources/delivery.png
+    url: https://mojtabaahn.github.io/assets/docs/delivery.png
 servers:
   - url: 'https://dashboard.noonbashop.com/api/v1'
 tags:
