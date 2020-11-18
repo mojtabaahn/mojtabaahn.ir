@@ -2,7 +2,7 @@
 
 return [
     'production' => false,
-    'baseUrl' => 'https://mojtabaahn.ir',
+    'baseUrl' => 'https://mojtabaahn.github.io',
     'title' => 'Api Docs',
     'description' => 'Api Docs',
     'collections' => [
