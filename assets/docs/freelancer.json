@@ -1,0 +1,1423 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IQoala",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://iqoala.code/api",
+      "variables": {}
+    },
+    {
+      "url": "http://iqoala.com/api/mobile/v1",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Regiter",
+        "operationId": "Regiter",
+        "parameters": [
+          {
+            "name": "first_name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "sina"
+            }
+          },
+          {
+            "name": "last_name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "dalvand"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "sinadalvand@yahoo.com"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 123412345
+            }
+          },
+          {
+            "name": "mobile_number",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "+989398738456"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Login",
+        "operationId": "Login",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "sinadalvand@yahoo.com"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 123412345
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/task/store": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Store new task",
+        "operationId": "Storenewtask",
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "suburb_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "budget_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/task/get-user-todo-tasks": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Get user Todo Tasks",
+        "operationId": "GetuserTodoTasks",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/task/done": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Done task",
+        "operationId": "Donetask",
+        "parameters": [
+          {
+            "name": "rate",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            }
+          },
+          {
+            "name": "comment",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "salam"
+            }
+          },
+          {
+            "name": "task_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 3
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/profile": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "User Profile",
+        "operationId": "UserProfile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Profile Update",
+        "operationId": "ProfileUpdate",
+        "parameters": [
+          {
+            "name": "first_name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Sina"
+            }
+          },
+          {
+            "name": "last_name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Dalvand"
+            }
+          },
+          {
+            "name": "dob",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "2020-09-09"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/profile/update": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Update user profile",
+        "operationId": "Updateuserprofile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/profile/update_contact": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Update User Contact Profile",
+        "description": "فقط اطلاعات مربوط به تماس کاربر آپدیت می شود",
+        "operationId": "UpdateUserContactProfile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/profile/upload_avatar": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Upload user profile",
+        "description": "send user profile as form data",
+        "operationId": "Uploaduserprofile",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "img"
+                ],
+                "type": "object",
+                "properties": {
+                  "img": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/profile/upload_logo": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Upload trader logo",
+        "description": "when user as trader can upload logo\n  * send file as form data",
+        "operationId": "Uploadtraderlogo",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "img"
+                ],
+                "type": "object",
+                "properties": {
+                  "img": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/profile/trader": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Become a trader",
+        "operationId": "Becomeatrader",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Buss1"
+            }
+          },
+          {
+            "name": "category_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "suburb_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "phone_number",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "+989118771477"
+            }
+          },
+          {
+            "name": "abn",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "example": 11111111111
+            }
+          },
+          {
+            "name": "website",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "google.com"
+            }
+          },
+          {
+            "name": "about",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Trader Update",
+        "operationId": "TraderUpdate",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Sina"
+            }
+          },
+          {
+            "name": "category_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "suburb_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "phone_number",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "+989398738141"
+            }
+          },
+          {
+            "name": "abn",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "example": 12345671431
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "logo",
+                  "_method"
+                ],
+                "type": "object",
+                "properties": {
+                  "logo": {
+                    "type": "string"
+                  },
+                  "_method": {
+                    "type": "string",
+                    "example": "put"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Trader get",
+        "operationId": "Traderget",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/profile/trader/update": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Update trader profile",
+        "operationId": "Updatetraderprofile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/profile/trader/update_contact": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "update trader profile",
+        "operationId": "updatetraderprofile",
+        "parameters": [
+          {
+            "name": "phone number",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "696-455-2151"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/profile/update_password": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Update user password",
+        "description": "\t",
+        "operationId": "Updateuserpassword",
+        "parameters": [
+          {
+            "name": "password",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 12345678
+            }
+          },
+          {
+            "name": "password_confirmation",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 12345678
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.com/api/mobile/v1",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/task-execution-date": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Defualt Category",
+        "operationId": "DefualtCategory",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/category/search": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Search Category",
+        "operationId": "SearchCategory",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "a"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/suburb/search": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Search Suber",
+        "operationId": "SearchSuber",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "new"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/profile/contact": {
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Contanct Update",
+        "operationId": "ContanctUpdate",
+        "parameters": [
+          {
+            "name": "phone_number",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "+989165657016"
+            }
+          },
+          {
+            "name": "mobile_number",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "+989165657016"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/profile/trader/contact": {
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Trader Contact",
+        "operationId": "TraderContact",
+        "parameters": [
+          {
+            "name": "phone_number",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "+98 9119111113"
+            }
+          },
+          {
+            "name": "website",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "www.google.com"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/task": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "get tasks",
+        "operationId": "gettasks",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "save tasks",
+        "operationId": "savetasks",
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "this is a good description fot this task and testing"
+            }
+          },
+          {
+            "name": "suburb_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "budget_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "task_execution_date_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "attachment"
+                ],
+                "type": "object",
+                "properties": {
+                  "attachment": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/task/user-todo-tasks": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "get Todo tasks",
+        "operationId": "getTodotasks",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/task/user-done-tasks": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "get Done tasks",
+        "operationId": "getDonetasks",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/task/1001/done": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "make done task",
+        "operationId": "makedonetask",
+        "parameters": [
+          {
+            "name": "rate",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 3
+            }
+          },
+          {
+            "name": "comment",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "that was nice"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/cancel-reason": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "get cancel reasons",
+        "operationId": "getcancelreasons",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/task/1003/review": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "save review",
+        "operationId": "savereview",
+        "parameters": [
+          {
+            "name": "rate",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 3
+            }
+          },
+          {
+            "name": "comment",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "salam"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/offer/accept/3": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "accept offer",
+        "operationId": "acceptoffer",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    },
+    "/mobile/v1/offer/3": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "get offer details",
+        "operationId": "getofferdetails",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "servers": [
+          {
+            "url": "http://iqoala.code/api",
+            "variables": {}
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "httpBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "httpBearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
