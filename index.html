@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://mojtabaahn.github.io/">
         <meta name="description" content="">
         <title>Mojtabaa H.N.</title>
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=4931d0cd5b4364c78899">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=e558dbe1daa72b4deceb">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -39,14 +39,17 @@
         
         <div class="grid lg:grid-cols-2 gap-6 my-6">
 
-                            <div class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-pink-600 hover:border-pink-500 cursor-default">
+                            <div
+                        x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
+                        class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-pink-600 hover:border-pink-500 cursor-default"
+                >
                     <div class=" flex items-center justify-between">
                         <div>
                             <div class="font-light text-3xl">Laravel Live Wire</div>
                             <div class="font-light text-gray-500 text-base">Did anyone say Agile ?</div>
                         </div>
 
-                        <img src="https://mojtabaahn.github.io/assets/techs/livewire.svg" alt="" class="w-32 h-32 object-contain p-4">
+                        <img src="https://mojtabaahn.github.io/assets/techs/livewire.svg" alt="" class="w-32 h-32 object-contain p-4 transition duration-300 transform" x-bind:class="{'-translate-y-2' : hovered}">
                     </div>
                     <div class="grid grid-cols-10 gap-1 my-4 relative">
                         <div class="absolute left-0 bottom-0 font-light transform translate-y-full text-sm text-gray-500">newbe</div>
@@ -63,14 +66,17 @@
                                                     <div class="h-1 rounded-full bg-gray-500"></div>
                                             </div>
                 </div>
-                            <div class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-blue-600 hover:border-blue-500 cursor-default">
+                            <div
+                        x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
+                        class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-blue-600 hover:border-blue-500 cursor-default"
+                >
                     <div class=" flex items-center justify-between">
                         <div>
                             <div class="font-light text-3xl">Alpine.js</div>
                             <div class="font-light text-gray-500 text-base">Making awesome reactive apps made easier!</div>
                         </div>
 
-                        <img src="https://mojtabaahn.github.io/assets/techs/alpine.svg" alt="" class="w-32 h-32 object-contain p-4">
+                        <img src="https://mojtabaahn.github.io/assets/techs/alpine.svg" alt="" class="w-32 h-32 object-contain p-4 transition duration-300 transform" x-bind:class="{'-translate-y-2' : hovered}">
                     </div>
                     <div class="grid grid-cols-10 gap-1 my-4 relative">
                         <div class="absolute left-0 bottom-0 font-light transform translate-y-full text-sm text-gray-500">newbe</div>
@@ -87,14 +93,17 @@
                                                     <div class="h-1 rounded-full bg-gray-500"></div>
                                             </div>
                 </div>
-                            <div class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-green-600 hover:border-green-500 cursor-default">
+                            <div
+                        x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
+                        class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-green-600 hover:border-green-500 cursor-default"
+                >
                     <div class=" flex items-center justify-between">
                         <div>
                             <div class="font-light text-3xl">Vue.js</div>
                             <div class="font-light text-gray-500 text-base">Making awesome reactive apps made easy!</div>
                         </div>
 
-                        <img src="https://mojtabaahn.github.io/assets/techs/vue.svg" alt="" class="w-32 h-32 object-contain p-4">
+                        <img src="https://mojtabaahn.github.io/assets/techs/vue.svg" alt="" class="w-32 h-32 object-contain p-4 transition duration-300 transform" x-bind:class="{'-translate-y-2' : hovered}">
                     </div>
                     <div class="grid grid-cols-10 gap-1 my-4 relative">
                         <div class="absolute left-0 bottom-0 font-light transform translate-y-full text-sm text-gray-500">newbe</div>
@@ -111,14 +120,17 @@
                                                     <div class="h-1 rounded-full bg-gray-500"></div>
                                             </div>
                 </div>
-                            <div class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-blue-600 hover:border-blue-500 cursor-default">
+                            <div
+                        x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
+                        class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-blue-600 hover:border-blue-500 cursor-default"
+                >
                     <div class=" flex items-center justify-between">
                         <div>
                             <div class="font-light text-3xl">React.js</div>
                             <div class="font-light text-gray-500 text-base">Making awesome reactive apps made a breeze!</div>
                         </div>
 
-                        <img src="https://mojtabaahn.github.io/assets/techs/react.svg" alt="" class="w-32 h-32 object-contain p-4">
+                        <img src="https://mojtabaahn.github.io/assets/techs/react.svg" alt="" class="w-32 h-32 object-contain p-4 transition duration-300 transform" x-bind:class="{'-translate-y-2' : hovered}">
                     </div>
                     <div class="grid grid-cols-10 gap-1 my-4 relative">
                         <div class="absolute left-0 bottom-0 font-light transform translate-y-full text-sm text-gray-500">newbe</div>
