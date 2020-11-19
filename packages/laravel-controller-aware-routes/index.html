@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="referrer" content="always">
+        <link rel="canonical" href="https://mojtabaahn.github.io/packages/laravel-controller-aware-routes">
+        <meta name="description" content="">
+        <title>Laravel Controller Aware Routes</title>
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=9d29c9445d196ac9f186">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
+        
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6T82ZCMC1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+
+                gtag('js', new Date());
+
+                gtag('config', 'G-R6T82ZCMC1');
+            </script>
+            </head>
+    <body class="text-gray-900 antialiased" style="background-color: #fcfcfc;font-family: 'Roboto Slab', serif;">
+            <div class="border-b border-light-8">
+        <div class="h-16 w-full px-6 max-w-4xl mx-auto flex items-center justify-between px-4">
+            <a href="/" class="items-center flex p-2 hover:text-blue-600">
+                <i class="bx bx-left-arrow-alt text-xl mr-2 relative top-px"></i>
+                <div>Go Back</div>
+            </a>
+            <a href="https://github.com/mojtabaahn/laravel-controller-aware-routes" class="inline-flex items-center justify-center hover:text-blue-600">
+                <div>View On Github</div>
+                <i class="bx bxl-github text-xl ml-2 relative top-px"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="w-full px-6 max-w-4xl mx-auto">
+        <h2 class="font-light my-16">
+            <div class="inline-block relative cursor-default" x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false">
+                <div class="text-5xl px-3 relative z-10">Laravel Controller Aware Routes</div>
+                <div class="absolute left-0 bottom-0 h-4 bg-gradient-to-r from-red-500 to-red-100 bg-opacity-50 w-full transform transition duration-100" x-bind:class="{'translate-y-1' : !hovered}"></div>
+            </div>
+        </h2>
+        <div class="prose my-8"><h2>Requirement</h2>
+
+<p>This package requires <strong>PHP 7.4</strong> or higher.</p>
+
+<h2>Installation</h2>
+
+<p>You can install the package via composer:</p>
+
+<pre><code class="language-bash">composer require mojtabaahn/laravel-controller-routes
+</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code class="language-php">&lt;?php
+// routes/web.php
+
+use MojtabaaHN\LaravelControllerRoutes\Routes;
+use Illuminate\Support\Facades\Route;
+
+
+Routes::make('UserController')-&gt;methods(function (ControllerAwareRouter $router) {
+    $router-&gt;get('user/{user}', 'profile')-&gt;name('user.profile');
+    $router-&gt;get('user/{user}/post/{post}','post')-&gt;name('user.post');
+});
+
+// Or
+
+Routes::make()
+    -&gt;controller('UserController')
+    -&gt;methods(function (ControllerAwareRouter $router) {
+        $router-&gt;get('user/{user}', 'profile')-&gt;name('user.profile');
+        $router-&gt;get('user/{user}/post/{post}','post')-&gt;name('user.post');
+    });
+
+// Same as
+
+Route::get('user/{user}', 'UserController@profile')-&gt;name('user.profile');
+Route::get('user/{user}/post/{post}','UserController@posts')-&gt;name('user.posts');
+
+// Using RouteRegistrar methods
+
+Routes::make()
+    -&gt;prefix('user/{user}')
+    -&gt;name('user.')
+    -&gt;middleware('web')
+    -&gt;controller('UserController')
+    -&gt;methods(function (ControllerAwareRouter $router) {
+        $router-&gt;get('/', 'profile')-&gt;name('profile');
+        $router-&gt;get('posts','posts')-&gt;name('posts');
+    });
+
+// same as
+
+Route::prefix('user/{user}')
+    -&gt;name('user.')
+    -&gt;middleware('web')
+    -&gt;group(function(){
+        Route::get('/', 'UserController@profile')-&gt;name('profile');
+        Route::get('posts','UserController@posts')-&gt;name('posts');
+    });
+
+</code></pre>
+
+<h2>Testing</h2>
+
+<pre><code class="language-bash">composer test
+</code></pre>
+
+<h2>License</h2>
+
+<p>The MIT License (MIT). Please see <a href="LICENSE.md">License File</a> for more information.</p>
+</div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    </body>
+</html>

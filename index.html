@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://mojtabaahn.github.io/">
         <meta name="description" content="">
         <title>Mojtabaa H.N.</title>
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=9689b3a51018e444e463">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=9d29c9445d196ac9f186">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -57,7 +57,9 @@
                 <div class="absolute left-0 bottom-0 h-4 bg-gradient-to-r from-red-500 to-red-100 bg-opacity-50 w-full transform transition duration-100 " x-bind:class="{'translate-y-1' : hovered}"></div>
             </div>
         </h2>
+
         
+
         <div class="grid lg:grid-cols-2 gap-6 my-6">
 
                             <div
@@ -259,6 +261,54 @@
                         <div class="rounded-sm p-5 cursor-default flex items-center justify-center">
                 <div class="font-light text-3xl text-gray-400">And Other Cool Stuff..</div>
             </div>
+        </div>
+
+        <h2 class="text-4xl md:text-6xl font-light my-16 mt-64 text-center">
+            <div class="inline-block relative cursor-default" x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false">
+                <div class="px-3 relative z-10">What About Open Source?</div>
+                <div class="absolute left-0 bottom-0 h-4 bg-gradient-to-r from-red-500 to-red-100 bg-opacity-50 w-full transform transition duration-100 " x-bind:class="{'translate-y-1' : hovered}"></div>
+            </div>
+        </h2>
+        <div class="grid lg:grid-cols-2 gap-6 my-6 mb-64">
+
+                            <a
+                        href="https://mojtabaahn.github.io/packages/laravel-controller-aware-routes"
+                        x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
+                        class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-red-600 hover:border-red-500"
+                >
+
+                    <div class=" flex items-center justify-between flex-col md:flex-row">
+                        <div>
+                            <div class="font-light text-3xl">Laravel Controller Aware Routes</div>
+                            <div class="font-light text-gray-500 text-base">Adds controller-aware route groups to Laravel apps.</div>
+                        </div>
+
+                        <img src="https://mojtabaahn.github.io/assets/techs/laravel.svg" alt="" class="w-32 h-32 object-contain p-4 transition duration-300 transform" x-bind:class="{'-translate-y-2' : hovered}">
+                    </div>
+                </a>
+                            <a
+                        href="https://mojtabaahn.github.io/packages/persian-persian-numbers-to-words"
+                        x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
+                        class="bg-white border border-gray-400 rounded-sm p-5 transition duration-100 hover:text-blue-600 hover:border-blue-500"
+                >
+
+                    <div class=" flex items-center justify-between flex-col md:flex-row">
+                        <div>
+                            <div class="font-light text-3xl">PHP Persian Numbers To Words</div>
+                            <div class="font-light text-gray-500 text-base">Convert numbers to words in Persian with PHP.</div>
+                        </div>
+
+                        <img src="https://mojtabaahn.github.io/assets/techs/php.svg" alt="" class="w-32 h-32 object-contain p-4 transition duration-300 transform" x-bind:class="{'-translate-y-2' : hovered}">
+                    </div>
+                </a>
+                            <div class="rounded-sm p-5 cursor-default flex items-center justify-center">
+                    <div class="font-light text-3xl text-gray-400">And Other Cool Stuff Soon..</div>
+                </div>
+        </div>
+
+
+        <div class="mt-24 text-xl py-3 flex items-center justify-center ">
+            <div class="inline-block bg-clip-text text-transparent bg-gradient-to-r to-purple-500 from-red-500">GG WP</div>
         </div>
     </div>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>

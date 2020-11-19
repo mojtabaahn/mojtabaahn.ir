@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="referrer" content="always">
+        <link rel="canonical" href="https://mojtabaahn.github.io/packages/persian-persian-numbers-to-words">
+        <meta name="description" content="">
+        <title>PHP Persian Numbers To Words</title>
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=9d29c9445d196ac9f186">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
+        
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6T82ZCMC1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+
+                gtag('js', new Date());
+
+                gtag('config', 'G-R6T82ZCMC1');
+            </script>
+            </head>
+    <body class="text-gray-900 antialiased" style="background-color: #fcfcfc;font-family: 'Roboto Slab', serif;">
+            <div class="border-b border-light-8">
+        <div class="h-16 w-full px-6 max-w-4xl mx-auto flex items-center justify-between px-4">
+            <a href="/" class="items-center flex p-2 hover:text-blue-600">
+                <i class="bx bx-left-arrow-alt text-xl mr-2 relative top-px"></i>
+                <div>Go Back</div>
+            </a>
+            <a href="https://github.com/mojtabaahn/php-persian-number-to-words" class="inline-flex items-center justify-center hover:text-blue-600">
+                <div>View On Github</div>
+                <i class="bx bxl-github text-xl ml-2 relative top-px"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="w-full px-6 max-w-4xl mx-auto">
+        <h2 class="font-light my-16">
+            <div class="inline-block relative cursor-default" x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false">
+                <div class="text-5xl px-3 relative z-10">PHP Persian Numbers To Words</div>
+                <div class="absolute left-0 bottom-0 h-4 bg-gradient-to-r from-red-500 to-red-100 bg-opacity-50 w-full transform transition duration-100" x-bind:class="{'translate-y-1' : !hovered}"></div>
+            </div>
+        </h2>
+        <div class="prose my-8"><p>This packages offers ability to convert numbers to words in persian. Words and phrases are fully configurable, so it is possible to use it for all persian language family with configuration.</p>
+
+<h2>Requirement</h2>
+
+<p>This package requires <strong>PHP 7.4</strong> or higher.</p>
+
+<h2>Installation</h2>
+
+<p>You can install the package via composer:</p>
+
+<pre><code class="language-bash">composer require mojtabaahn/php-persian-number-to-words
+</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code class="language-php">$dictionary = new MojtabaaHN\PersianNumberToWords\Dictionary();
+
+$converter = new MojtabaaHN\PersianNumberToWords\PersianNumberToWords($dictionary);
+
+echo $converter-&gt;convert(0);
+// صفر
+
+echo $converter-&gt;convert(-10);
+// منفی ده
+
+echo $converter-&gt;convert(229);
+// دویست و بیست و نه
+
+echo $converter-&gt;convert(999999999);
+// نهصد و نود و نه میلیون و نهصد و نود و نه هزار و نهصد و نود و نه
+</code></pre>
+
+<h2>Configuration</h2>
+
+<p>It is possible to customize the way output should look like using Dictionary class setter methods.</p>
+
+<pre><code class="language-php">$dictionary = (new MojtabaaHN\PersianNumberToWords\Dictionary())
+    -&gt;setZero('هیچ')
+    -&gt;setNegative('منهای')
+    -&gt;setSeparator(' ُ ');
+
+// Also -&gt;setUnits(array $units) &amp; -&gt; setSuffixes(array $suffixes) are availabe
+
+$converter = new MojtabaaHN\PersianNumberToWords\PersianNumberToWords($dictionary);
+
+echo $converter-&gt;convert(0);
+// هیچ
+
+echo $converter-&gt;convert(-10);
+// منهای ده
+
+echo $converter-&gt;convert(229);
+// دویست ُ بیست ُ نه
+
+</code></pre>
+
+<h2>Default Configuration</h2>
+
+<p>This code is a part of Dictionary class, you can see all default Configuration:</p>
+
+<pre><code class="language-php">class Dictionary
+{
+
+    protected string $zero = 'صفر';
+
+    protected string $negative = 'منفی';
+
+    protected string $separator = " و ";
+
+    protected array $units = [
+        1 =&gt; 'یک',
+        2 =&gt; 'دو',
+        3 =&gt; 'سه',
+        4 =&gt; 'چهار',
+        5 =&gt; 'پنج',
+        6 =&gt; 'شش',
+        7 =&gt; 'هفت',
+        8 =&gt; 'هشت',
+        9 =&gt; 'نه',
+        10 =&gt; 'ده',
+        11 =&gt; 'یازده',
+        12 =&gt; 'دوازده',
+        13 =&gt; 'سیزده',
+        14 =&gt; 'چهارده',
+        15 =&gt; 'پانزده',
+        16 =&gt; 'شانزده',
+        17 =&gt; 'هفده',
+        18 =&gt; 'هجده',
+        19 =&gt; 'نوزده',
+        20 =&gt; 'بیست',
+        30 =&gt; 'سی',
+        40 =&gt; 'چهل',
+        50 =&gt; 'پنجاه',
+        60 =&gt; 'شصت',
+        70 =&gt; 'هفتاد',
+        80 =&gt; 'هشتاد',
+        90 =&gt; 'نود',
+        100 =&gt; 'صد',
+        200 =&gt; 'دویست',
+        300 =&gt; 'سیصد',
+        400 =&gt; 'چهارصد',
+        500 =&gt; 'پانصد',
+        600 =&gt; 'ششصد',
+        700 =&gt; 'هفتصد',
+        800 =&gt; 'هشتصد',
+        900 =&gt; 'نهصد'
+    ];
+
+    protected array $suffixes = [
+        3 =&gt; 'هزار',
+        6 =&gt; 'میلیون',
+        9 =&gt; 'میلیارد',
+        12 =&gt; 'بیلیون',
+        15 =&gt; 'بیلیارد',
+        18 =&gt; 'تریلیون',
+        21 =&gt; 'تریلیارد',
+        24 =&gt; 'کوآدریلیون',
+        27 =&gt; 'کادریلیارد',
+        30 =&gt; 'کوینتیلیون',
+        33 =&gt; 'کوانتینیارد',
+        36 =&gt; 'سکستیلیون',
+        39 =&gt; 'سکستیلیارد',
+        42 =&gt; 'سپتیلیون',
+        45 =&gt; 'سپتیلیارد',
+        48 =&gt; 'اکتیلیون',
+        51 =&gt; 'اکتیلیارد',
+        54 =&gt; 'نانیلیون',
+        57 =&gt; 'نانیلیارد',
+        60 =&gt; 'دسیلیون',
+        63 =&gt; 'دسیلیارد',
+    ];
+
+    // Setters &amp; Helpers...
+
+}
+</code></pre>
+
+<h2>Testing</h2>
+
+<pre><code class="language-bash">composer test
+</code></pre>
+
+<h2>License</h2>
+
+<p>The MIT License (MIT). Please see <a href="LICENSE.md">License File</a> for more information.</p>
+</div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    </body>
+</html>
