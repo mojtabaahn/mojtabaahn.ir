@@ -118,6 +118,10 @@ paths:
         '200':
           description: ''
           headers: {}
+          content:
+            application/json:
+              example:
+                message: "We have e-mailed your password reset link!"
       deprecated: false
 
   /auth/reset-password:
@@ -158,6 +162,10 @@ paths:
         '200':
           description: ''
           headers: {}
+          content:
+            application/json:
+              example:
+                message: "Your password has been reset!"
       deprecated: false
 
   /task/store:
