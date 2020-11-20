@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://mojtabaahn.github.io/">
         <meta name="description" content="">
         <title>Mojtabaa H.N.</title>
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=99d94cceff0fc6a2b409">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=053cdbb2992cde15da23">
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -30,22 +30,26 @@
     <body class="text-gray-900 antialiased" style="background-color: #fcfcfc;font-family: 'Roboto Slab', serif;">
         
     <div class="w-full h-screen flex items-center justify-center">
-        <div class="m-5">
+        <div class="m-5 flex flex-col items-center">
             <div
                     class="bg-gradient-to-r p-2 cursor-default transition duration-100"
                     x-bind:class="[hovered ? 'from-purple-500 to-red-500' : 'to-purple-500 from-red-500']"
                     x-data="{hovered : false}" x-on:mouseenter="hovered = true" x-on:mouseleave="hovered = false"
             >
-                <div class="p-6 overflow-hidden" style="background-color: #fcfcfc">
+                <div class="overflow-hidden" style="background-color: #fcfcfc">
                     <div
-                            class="text-3xl md:text-6xl font-normal bg-clip-text text-transparent bg-gradient-to-r "
+                            class="p-6 text-3xl md:text-6xl font-normal bg-clip-text text-transparent bg-gradient-to-r "
                             x-bind:class="[hovered ? 'from-purple-500 to-red-500' : 'to-purple-500 from-red-500']"
                     >
                         Hi. I'm Mojtabaa.
                     </div>
                 </div>
             </div>
-            <div class="font-light text-lg md:text-2xl text-center text-gray-500 mt-8"> I Do Stuff.. What Stuff? Scroll Down..</div>
+            <div class="font-normal text-lg md:text-2xl text-left text-gray-800 mt-8">
+                <div>I Do Some Stuff With Computers 💻</div>
+                <div>What Stuff You Ask 🙄</div>
+                <div>Scroll Down ⬇</div>
+            </div>
         </div>
 
     </div>
@@ -301,13 +305,14 @@
                         <img src="https://mojtabaahn.github.io/assets/techs/php.svg" alt="" class="w-32 h-32 object-contain p-4 transition duration-300 transform" x-bind:class="{'-translate-y-2' : hovered}">
                     </div>
                 </a>
-                            <div class="rounded-sm p-5 cursor-default flex items-center justify-center">
-                    <div class="font-normal text-2xl text-gray-400">Well.. I'm still searching for neat ideas..</div>
-                </div>
+                        <div class="rounded-sm p-5 cursor-default flex items-center justify-center">
+                <div class="font-normal text-2xl text-gray-400">Well.. I'm still searching for neat ideas..</div>
+            </div>
         </div>
 
 
-        <div class="mt-24 text-xl py-3 flex items-center justify-center ">
+        <div class="mt-24 text-xl py-3 flex items-center justify-between ">
+            <div class="inline-block bg-clip-text text-transparent bg-gradient-to-r to-purple-500 from-red-500">mojtabaa.hn@gmail.com</div>
             <div class="inline-block bg-clip-text text-transparent bg-gradient-to-r to-purple-500 from-red-500">GG WP</div>
         </div>
     </div>
